@@ -1,0 +1,16 @@
+[
+    {"usuario" : {
+        "nombre": "riqui",
+        "id": "2",
+        "departamento": "informatica"
+    }, "descripcion":"Se me apaga el monitor" , "estado": 1, "idUsuario": "1"},
+    {"nombre": "Pedrito", "descripcion":"Se me rompio el google chrome" , "estado": 1, "idUsuario": "2"},
+    {"nombre": "Tu mama", "descripcion":"Impresora no funca" , "estado": 1, "idUsuario": "1"},
+    {"nombre": "Pedrito", "descripcion":"Se me rompio el google chrome" , "estado": 1, "idUsuario": "2"},
+    {"nombre": "Tu mama", "descripcion":"Impresora no funca" , "estado": 1, "idUsuario": "1"},
+    {"nombre": "Pedrito", "descripcion":"Se me rompio el google chrome" , "estado": 1, "idUsuario": "2"},
+    {"nombre": "Tu mama", "descripcion":"Impresora no funca" , "estado": 1, "idUsuario": "1"}
+]
+
+
+
