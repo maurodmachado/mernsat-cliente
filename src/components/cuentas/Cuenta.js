@@ -26,7 +26,7 @@ export const Cuenta = ({ cuenta }) => {
 
   return (
     <>
-      <li className="tarea sombra">
+      <li className="elemento sombra">
         <p> {cuenta.usuario} </p> <p>{cuenta.departamento}</p>
         <div>
           <div className="acciones">

@@ -44,46 +44,42 @@ export const ListadoSolicitudes = () => {
       <div className="seccion-principal">
         <Barra />
         <main>
-          <div className="formulario-nuevo-proyecto">
-          {usuario != null ? (
-        usuario.departamento === "Informatica" ? (
-          <h2>Solicitudes por atender</h2>
-        ) : (
-          <h2>Solicitudes realizadas</h2>
-        )
-      ) : (
-        ""
-      )}
-      
+          <div className="formulario-listado-solicitudes">
+            <br />
+            {usuario != null ? (
+              usuario.departamento === "Informatica" ? (
+                <h2>Solicitudes por atender</h2>
+              ) : (
+                <h2>Solicitudes realizadas</h2>
+              )
+            ) : (
+              ""
+            )}
           </div>
           <div className="listado-cuentas">
-            <table>
-              <thead>
-                <tr>
-                  <th>Departamento</th>
-                  <th>Solicitante</th>
-                  <th>Descripcion</th>
-                  <th>Estado</th>
-                  <th>Acciones</th>
-                </tr>
-              </thead>
-              <tbody>
-              {solicitudes === undefined ? (
-              <tr className="tarea">
-                <p>No hay solicitudes</p>
-              </tr>
+            {solicitudes.length === 0 ? (
+              <h2>No hay solicitudes realizadas</h2>
             ) : (
-              solicitudes.map((solicitud) => (
-                <Solicitud solicitud={solicitud} key={solicitud._id} />
-              ))
+              <table>
+                <thead>
+                  <tr>
+                    <th>Departamento</th>
+                    <th>Solicitante</th>
+                    <th>Descripcion</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {solicitudes.length === 0
+                    ? ""
+                    : solicitudes.map((solicitud) => (
+                        <Solicitud solicitud={solicitud} key={solicitud._id} />
+                      ))}
+                </tbody>
+              </table>
             )}
-                
-              </tbody>
-            </table>
           </div>
-          <ul className="listado-tareas">
-            
-          </ul>
         </main>
       </div>
     </div>

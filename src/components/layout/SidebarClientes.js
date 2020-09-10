@@ -8,7 +8,7 @@ export const SidebarClientes = () => {
         MERN <span>SAT</span>
       </h1>
       <br/>
-      <div className="proyectos">
+      <div className="solicitudes">
         <h2>Solicitudes</h2>
         <br/>
       </div>
@@ -17,8 +17,8 @@ export const SidebarClientes = () => {
           Realizar solicitud
         </button>
       </Link>
-      
-      <div className="proyectos">
+      <br/>
+      <div className="solicitudes">
         <h2>Mis Solicitudes</h2>
         <br/>
       </div>

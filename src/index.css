@@ -105,25 +105,42 @@ a {
 
 }
 
+@media (min-width: 768px min-height: 1024px) {
+  .contenedor-app {
+      display: flex;
+      min-height: 100vh;
+  }
+
+  aside {
+      background-color: var(--blanco);
+      flex: 0 0 25%;
+  }
+  .seccion-principal {
+      flex: 0 0 75%;
+      
+  }
+
+}
 
 /* BARRA LATERAL */
 aside  {
   padding: 3rem;
 }
 
-.formulario-nuevo-proyecto {
+.formulario-listado-solicitudes {
   margin-top: 4rem;
 }
-.formulario-nuevo-proyecto .input-text {
+.formulario-listado-solicitudes .input-text {
   border-bottom: 1px solid var(--gris2);
   border-radius: 0;
   background-color: var(--gris1);
 }
-.formulario-nuevo-proyecto .input-text::placeholder{
+.formulario-listado-solicitudes .input-text::placeholder{
   color: var(--gris2);
 }
 
-.listado-cuentas {
+
+.listado-cuentas-title {
   margin-top: 4rem;
   display: flex;
   justify-content: space-between;
@@ -131,24 +148,18 @@ aside  {
   border-radius: .5rem;
 }
 
-.proyectos {
+.solicitudes {
   margin-top: 2rem;
 }
-.listado-proyectos li {
-  margin-bottom: 2rem;
-}
-.listado-proyectos li a {
-  font-size: 1.4rem;
-  color: var(--gris2);
-  line-height: 1.5;
-  font-weight: 300;
-}
+
 .app-header {
   display: flex;
+  min-height: 15%;
   height: 15vh;
   justify-content: space-between;
   background-color: var(--gris2);
   padding: 4rem;
+  height:auto;
 }
 .nombre-usuario {
   color: var(--blanco);
@@ -166,7 +177,7 @@ aside  {
   margin-right: 2rem;
 }
 
-/** Formulario crear y editar tareas **/
+/** Formulario crear solicitudes **/
 .title-black-background{
   color: var(--blanco);
 }
@@ -198,12 +209,7 @@ margin: 0 auto;
   flex: 1;
 }
 
-/** TAREAS LISTADO **/
-.contenedor-tareas {
-  padding: 1rem;
-}
-
-.listado-tareas {
+.listado-cuentas {
   max-width: auto;
   padding: 4rem;
   margin: 0 auto;
@@ -212,7 +218,7 @@ margin: 0 auto;
   width: 75vw;
 }
 
-.tarea {
+.elemento {
   display: flex;
   justify-content: space-between;
   background-color: var(--blanco);
@@ -224,18 +230,8 @@ margin: 0 auto;
   max-width: auto;
 
 }
-.tarea2 {
-  display: flex;
-  justify-content: space-between;
-  background-color: var(--blanco);
-  padding: .5rem 2rem;
-  align-items: center;
-  margin-bottom: 1rem;
-  border-radius: .5rem;
-  height: 15vh;
-  max-width: auto;
 
-}
+
 .sombra {
   -webkit-box-shadow: 0px 4px 10px -3px rgba(117,117,117,1);
   -moz-box-shadow: 0px 4px 10px -3px rgba(117,117,117,1);
@@ -246,16 +242,16 @@ margin: 0 auto;
   -moz-box-shadow: 0px 6px 11px -8px rgba(0,0,0,0.9);
   box-shadow: 0px 6px 11px -8px rgba(0,0,0,0.9);
 }
-.tarea .acciones .btn:first-of-type {
+.elemento .acciones .btn:first-of-type {
   margin: 1rem 1rem 1rem 1rem;
   
 }
-.tarea p {
+.elemento p {
   font-size: 1.6rem;
   flex: 1;
   padding-right: 2rem;
 }
-.tarea .btn {
+.elemento .btn {
   padding: .8rem;
   font-size:1.4rem;
   border-radius: 0;
@@ -263,13 +259,6 @@ margin: 0 auto;
   width: 100%;
 }
 
-.tarea2 .btn {
-  padding: .8rem;
-  font-size:1.4rem;
-  border-radius: 0;
-  margin: 0;
-  width: 100%;
-}
 
 .estado {
   margin-right: 1rem;
@@ -308,35 +297,14 @@ margin: 0 auto;
   color: var(--blanco);
 }
 
-
-
-.tarea-enter,
-.proyecto-enter {
-  opacity: 0;
-}
-.tarea-enter-active,
-.proyecto-enter-active {
-  opacity: 1;
-  transition: opacity 200ms;
-}
-.tarea-exit,
-.proyecto-exit {
-  opacity: 1;
-}
-.tarea-exit-active,
-.proyecto-exit-active {
-  opacity: 0;
-  transition: opacity 200ms;
-}
-
 .top-header {
   height: 10vh;
   padding: 3rem;
-  
+  height:auto;
 }
  
 .form-usuario {
-    background-color: var(--gris2);
+    background-color: var(--gris3);
     height: 85vh;
     display: flex;
     align-items: center;
@@ -344,7 +312,7 @@ margin: 0 auto;
 }
 
 .form-login {
-  background-color: var(--gris2);
+  background-color: var(--gris3);
   height: 90vh;
   display: flex;
   align-items: center;
@@ -462,6 +430,10 @@ th {
 td, th { 
   padding: 10px; 
   border: 1px solid #ccc; 
-  text-align: left; 
   font-size: 1.6rem;
+  text-align: center;
+}
+
+.limite {
+  min-width: 9vw;
 }

@@ -8,7 +8,7 @@ export const Sidebar = () => {
         MERN <span>SAT</span>
       </h1>
       <br/>
-      <div className="proyectos">
+      <div className="solicitudes">
         <h2>Solicitudes</h2>
         <br/>
       </div>
@@ -23,7 +23,8 @@ export const Sidebar = () => {
           Ver solicitudes
         </button>
       </Link>
-      <div className="proyectos">
+      <div className="solicitudes">
+      <br/>
         <h2>Cuentas</h2>
         <br/>
         <Link to="/crearcuenta">

@@ -15,7 +15,7 @@ export const NuevaSolicitud = (props) => {
   let userId =""; 
   //Extraer informacion de autenticacion
   const authContext = useContext(AuthContext);
-  const { usuario, usuarioAutenticado, mensaje } = authContext;
+  const { usuario, usuarioAutenticado } = authContext;
   
   useEffect(() => {
     usuarioAutenticado();

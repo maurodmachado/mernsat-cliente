@@ -40,10 +40,10 @@ export const Solicitud = ({ solicitud }) => {
   return (
     <>
       <tr>
-        <td><h4>{solicitud.departamento}</h4></td>
-        <td>{solicitud.nombre_solicitante}</td>
+        <td className="limite"><h4>{solicitud.departamento}</h4></td>
+        <td className="limite">{solicitud.nombre_solicitante}</td>
         <td>{solicitud.descripcion}</td>
-        <td>{usuario != null ? (
+        <td className="limite">{usuario != null ? (
             usuario.departamento === "Informatica" ? (
               <button
                 type="button"

@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { Sidebar } from "../layout/Sidebar";
 import AlertaContext from "../../context/alertas/alertaContext";
 import AuthContext from "../../context/autenticacion/authContext";

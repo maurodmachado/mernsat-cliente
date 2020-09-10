@@ -44,15 +44,15 @@ export const EliminarCuenta = () => {
       <div className="seccion-principal">
         <Barra />
         <main>
-          <div className="formulario-nuevo-proyecto">
+          <div className="formulario-listado-solicitudes">
             <h2>Listado de cuentas</h2>
           </div>
-          <div className="listado-cuentas">
+          <div className="listado-cuentas-title">
             <h2>Usuario</h2>
             <h2>Departamento</h2>
             <h2>Acciones</h2>
           </div>
-          <ul className="listado-tareas">
+          <ul className="listado-cuentas">
             {cuentas === undefined ? (
               <li className="tarea">
                 <p>No hay cuentas</p>
