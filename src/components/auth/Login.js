@@ -54,7 +54,12 @@ export const Login = (props) => {
   };
 
   return (
+    <>
+    <div className="top-header">
+    <h1>Solicitud de Asistencia Técnica</h1>
+    </div>
     <div className="form-login">
+      
       {alerta ? (
         <div className={`alerta ${alerta.categoria}`}> {alerta.msg} </div>
       ) : null}
@@ -93,5 +98,6 @@ export const Login = (props) => {
         </form>
       </div>
     </div>
+    </>
   );
 };
