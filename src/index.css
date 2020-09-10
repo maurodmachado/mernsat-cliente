@@ -105,23 +105,6 @@ a {
 
 }
 
-@media (min-width: 768px min-height: 1024px) {
-  .contenedor-app {
-      display: flex;
-      min-height: 100vh;
-  }
-
-  aside {
-      background-color: var(--blanco);
-      flex: 0 0 25%;
-  }
-  .seccion-principal {
-      flex: 0 0 75%;
-      
-  }
-
-}
-
 /* BARRA LATERAL */
 aside  {
   padding: 3rem;
@@ -298,9 +281,10 @@ margin: 0 auto;
 }
 
 .top-header {
-  height: 10vh;
-  padding: 3rem;
+  
   height:auto;
+  min-height: 10vh;
+  padding-top: 3rem;
 }
  
 .form-usuario {
