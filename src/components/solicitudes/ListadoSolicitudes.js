@@ -1,14 +1,17 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { Sidebar } from "../layout/Sidebar";
 import { SidebarClientes } from "../layout/SidebarClientes";
 import { Barra } from "../layout/Barra";
 import SolicitudContext from "../../context/solicitudes/solicitudContext";
 import AuthContext from "../../context/autenticacion/authContext";
 import { Solicitud } from "./Solicitud";
+import io from 'socket.io-client'
+
+const socket = io.connect('http://localhost:4000')
 
 export const ListadoSolicitudes = () => {
   let departamento = "";
-
+  const [listado,  setListado] = useState({listado: []})
   //Extraer informacion de autenticacion
   const authContext = useContext(AuthContext);
   const { usuario, usuarioAutenticado } = authContext;
@@ -20,16 +23,20 @@ export const ListadoSolicitudes = () => {
   if (usuario !== null) {
     departamento = usuario.departamento;
   }
-
+  
   const solicitudContext = useContext(SolicitudContext);
   const { solicitudes: solicituds, obtenerSolicitudes } = solicitudContext;
-  useEffect(() => {
-    obtenerSolicitudes(departamento);
-    // eslint-disable-next-line
-  }, []);
-
   const solicitudes = Array.from(solicituds);
   
+  
+  useEffect(() => {
+    obtenerSolicitudes(departamento);
+    console.log('Se recarga solicitudes');
+    socket.on('message', ({ nombre_solicitante, departamento, descripcion, estado }) => {
+      setListado([solicituds, { nombre_solicitante, departamento, descripcion, estado }])
+    })
+  })
+
   return (
     <div className="contenedor-app">
       {usuario != null ? (

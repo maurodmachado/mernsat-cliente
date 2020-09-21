@@ -37,6 +37,7 @@ export const Solicitud = ({ solicitud }) => {
     mostrarAlerta("Solicitud eliminada", "alerta-error");
   };
   
+
   return (
     <>
       <tr>
@@ -64,17 +65,17 @@ export const Solicitud = ({ solicitud }) => {
           ) : (
             ""
           )}</td>
-          <td><div className="acciones">
+          <td>
           <button
             type="button"
-            className="btn btn-primario"
+            className="btn btn-primario acciones"
             onClick={() => {
               eliminarRequest(solicitud._id);
             }}
           >
             Eliminar
           </button>
-        </div></td>
+        </td>
       </tr>
       {alerta ? (
               <div className={`alerta-abajo ${alerta.categoria}`}> {alerta.msg} </div>

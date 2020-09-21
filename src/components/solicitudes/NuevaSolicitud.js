@@ -5,6 +5,9 @@ import AuthContext from "../../context/autenticacion/authContext";
 import SolicitudContext from "../../context/solicitudes/solicitudContext";
 import { SidebarClientes } from "../layout/SidebarClientes";
 import { Barra } from "../layout/Barra";
+import io from 'socket.io-client'
+
+const socket = io.connect('http://localhost:4000')
 
 export const NuevaSolicitud = (props) => {
   //Extraer los valores de alerta
@@ -34,10 +37,11 @@ export const NuevaSolicitud = (props) => {
   const [solicitud, setSolicitud] = useState({
     nombre_solicitante: "",
     descripcion: "",
-    departamento: ""
+    departamento: "",
+    estado: false
   });
 
-  const { nombre_solicitante, descripcion } = solicitud;
+  const { nombre_solicitante, descripcion, estado } = solicitud;
 
   //Accion al cambiar algun campo del login
   const onChange = (e) => {
@@ -79,6 +83,8 @@ export const NuevaSolicitud = (props) => {
       mostrarAlerta("Error al crear solicitud", "alerta-error");
     }
       
+    
+    socket.emit('message', { nombre_solicitante, departamento, descripcion, estado })
   };
 
   return (
