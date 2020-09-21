@@ -36,7 +36,7 @@ export const Solicitud = ({ solicitud }) => {
     eliminarSolicitud(id);
     mostrarAlerta("Solicitud eliminada", "alerta-error");
   };
-
+  
   return (
     <>
       <tr>

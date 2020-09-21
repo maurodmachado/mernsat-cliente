@@ -15,8 +15,8 @@ export const ListadoSolicitudes = () => {
 
   useEffect(() => {
     usuarioAutenticado();
-    // eslint-disable-next-line
-  }, []);
+    
+  }, [usuarioAutenticado]);
   if (usuario !== null) {
     departamento = usuario.departamento;
   }
@@ -29,7 +29,7 @@ export const ListadoSolicitudes = () => {
   }, []);
 
   const solicitudes = Array.from(solicituds);
-
+  
   return (
     <div className="contenedor-app">
       {usuario != null ? (

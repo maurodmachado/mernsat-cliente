@@ -54,7 +54,7 @@ export const EliminarCuenta = () => {
           </div>
           <ul className="listado-cuentas">
             {cuentas === undefined ? (
-              <li className="tarea">
+              <li className="elemento">
                 <p>No hay cuentas</p>
               </li>
             ) : (
