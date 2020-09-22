@@ -5,7 +5,7 @@ export const SidebarClientes = () => {
   return (
     <aside>
       <h1>
-      <span role="img" aria-label="computer">🖥️</span> MERN <span>SAT</span> <span role="img" aria-label="computer">🖥️</span>
+      <span role="img" aria-label="computer">🖥️</span> MERN <span>SAT</span><span role="img" aria-label="computer">🖥️</span>
       </h1>
       <br/>
       <div className="solicitudes">
