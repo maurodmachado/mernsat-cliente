@@ -29,18 +29,18 @@ export const Cuenta = ({ cuenta }) => {
       <li className="elemento sombra">
         <p> {cuenta.usuario} </p> <p>{cuenta.departamento}</p>
         <div>
-          <div className="acciones">
+          
             <button
               type="button"
-              className="btn btn-primario"
+              className="btn btn-primario acciones"
               onClick={() => {
                 eliminarAccount(cuenta._id);
               }}
             >
-              Eliminar
+              <span role="img" aria-label="eliminar" >⛔</span> Eliminar
             </button>
           </div>
-        </div>
+        
         {alerta ? (
               <div className={`alerta-abajo ${alerta.categoria}`}> {alerta.msg} </div>
             ) : null}

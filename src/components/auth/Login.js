@@ -56,7 +56,7 @@ export const Login = (props) => {
   return (
     <>
     <div className="top-header">
-    <h1>Solicitud de Asistencia Técnica</h1>
+    <h1><span role="img" aria-label="computadora" >💻</span>  Solicitud de Asistencia Técnica <span role="img" aria-label="computadora2" >💻</span></h1>
     
     </div>
     <div className="form-login">
@@ -68,7 +68,7 @@ export const Login = (props) => {
         <h1>Iniciar Sesión</h1>
         <form onSubmit={onSubmit}>
           <div className="campo-form">
-            <label htmlFor="usuario">Usuario</label>
+            <label htmlFor="usuario"> <span role="img" aria-label="usuario" >👤</span> Usuario</label>
             <input
               type="text"
               id="usuario"
@@ -79,7 +79,7 @@ export const Login = (props) => {
             />
           </div>
           <div className="campo-form">
-            <label htmlFor="password">Pasword</label>
+            <label htmlFor="password"><span role="img" aria-label="password" >🔑</span> Password</label>
             <input
               type="password"
               id="password"

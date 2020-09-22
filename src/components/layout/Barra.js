@@ -20,7 +20,7 @@ export const Barra = () => {
       <nav className="nav-principal">
         <button className="btn btn-blanc cerrar-sesion" 
         onClick={() => cerrarSesion()}
-        >Cerrar Sesión</button>
+        > <span role="img" aria-label="cerrarsesion" >❌</span> Cerrar Sesión</button>
       </nav>
     </header>
   );

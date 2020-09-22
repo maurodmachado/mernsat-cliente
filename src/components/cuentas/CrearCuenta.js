@@ -96,7 +96,7 @@ export const CrearCuenta = (props) => {
               <h1>Crear una cuenta</h1>
               <form onSubmit={onSubmit}>
                 <div className="campo-form">
-                  <label htmlFor="usuario">Usuario</label>
+                <label htmlFor="usuario"> <span role="img" aria-label="usuario" >👤</span> Usuario</label>
                   <input
                     type="text"
                     id="usuario"
@@ -107,7 +107,7 @@ export const CrearCuenta = (props) => {
                   />
                 </div>
                 <div className="campo-form">
-                  <label htmlFor="password">Pasword</label>
+                <label htmlFor="password"><span role="img" aria-label="password" >🔑</span> Password</label>
                   <input
                     type="password"
                     id="password"
@@ -118,7 +118,7 @@ export const CrearCuenta = (props) => {
                   />
                 </div>
                 <div className="campo-form">
-                  <label htmlFor="confirmar">Confirmar Pasword</label>
+                <label htmlFor="confirmar"><span role="img" aria-label="password" >🔑</span> Confirmar</label>
                   <input
                     type="password"
                     id="confirmar"
@@ -129,7 +129,7 @@ export const CrearCuenta = (props) => {
                   />
                 </div>
                 <div className="campo-form">
-                <label htmlFor="departamento">Depto</label>
+                <label htmlFor="departamento"><span role="img" aria-label="departamento" >⚖️</span> Departamento</label>
                 <select id="departamento" name="departamento" value={departamento} onChange={onChange}>
                   <option value="" >
                     Seleccione departamento

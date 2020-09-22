@@ -72,7 +72,7 @@ export const Solicitud = ({ solicitud }) => {
                 <button
                   type="button"
                   className={
-                    solicitud.estado === "true" ? "completo" : "incompleto"
+                    solicitud.estado === "true" ? "btn-estado completo" : "btn-estado incompleto"
                   }
                   onClick={() => cambiarEstado(solicitud)}
                 >
@@ -86,7 +86,7 @@ export const Solicitud = ({ solicitud }) => {
                 <button
                   type="button"
                   className={
-                    solicitud.estado === "true" ? "completo" : "incompleto"
+                    solicitud.estado === "true" ? "btn-estado completo" : "btn-estado incompleto"
                   }
                 >
                   {solicitud.estado === "true"
@@ -110,7 +110,7 @@ export const Solicitud = ({ solicitud }) => {
                     archivarRequest(solicitud);
                   }}
                 >
-                  Archivar
+                <span role="img" aria-label="archivar">📋</span> Archivar
                 </button>
               ) : (
                 <button
@@ -120,7 +120,7 @@ export const Solicitud = ({ solicitud }) => {
                     eliminarRequest(solicitud._id);
                   }}
                 >
-                  Eliminar
+                  <span role="img" aria-label="eliminar" >⛔</span> Eliminar
                 </button>
               )
             ) : (
@@ -137,7 +137,7 @@ export const Solicitud = ({ solicitud }) => {
           <td>{solicitud.descripcion}</td>
           <td className="limite">
             {usuario != null ? (
-              <button type="button" className="archivada">
+              <button type="button" className="btn-estado archivada">
                 Archivada
               </button>
             ) : (
@@ -153,7 +153,7 @@ export const Solicitud = ({ solicitud }) => {
                   desarchivarRequest(solicitud);
                 }}
               >
-                Desarchivar
+                <span role="img" aria-label="desarchivar" >🧷</span>  Desarchivar
               </button>
             ) : (
               ""
@@ -167,7 +167,7 @@ export const Solicitud = ({ solicitud }) => {
                   eliminarRequest(solicitud._id);
                 }}
               >
-                Eliminar
+                <span role="img" aria-label="eliminar" >⛔</span> Eliminar
               </button>
             }
           </td>

@@ -51,9 +51,10 @@ a {
 }
 
 .delete-all {
-  padding: 0.2rem 60rem;
-  border-radius: .5rem;
- 
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 /** BOTONES **/
@@ -68,6 +69,15 @@ a {
 }
 .btn:hover {
   cursor: pointer;
+}
+.btn-estado{
+  font-family: var(--headingFont);
+  padding: 1rem;
+  font-size: 1.4;
+  font-weight: 400;
+  border-bottom: 1px solid black;
+  border-radius: .5rem;
+  transition: background-color .3s ease;
 }
 .btn-primario {
   background-color: var(--gris2);
@@ -91,6 +101,12 @@ a {
   padding: 0;
   display: block;
   background-color: transparent;
+}
+
+.alargado {
+  min-width: max-content;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (min-width: 768px) {
@@ -313,8 +329,8 @@ margin: 0 auto;
 }
 
 .contenedor-form {
-    padding: 5rem 2rem;
-    max-width: 600px;
+    padding: 7rem 3rem;
+    max-width: 700px;
     width: 100%;
     background-color: var(--blanco);
     border-radius: 1rem;
@@ -329,21 +345,22 @@ margin: 0 auto;
   margin: 0;
 }
 .campo-form label {
-  flex: 0 0 100px ;
-  padding: 1rem;
+  flex: 0 0 145px ;
+  padding: 0.5rem;
   font-family: var(--textFont);
-  
 }
 .campo-form input[type="password"],
 .campo-form input[type="text"] {
-  border: 1px solid #e1e1e1;
+  border: 1px solid var(--gris2);
   padding: 1rem;
-  flex: 1;
+  min-width: 500px;
+
 }
 .campo-form select {
-  border: 1px solid #e1e1e1;
+  border: 1px solid var(--gris2);
   padding: 1rem;
-  flex: 1;
+  display: flex;
+  min-width: 500px;
 }
 
 .enlace-cuenta {

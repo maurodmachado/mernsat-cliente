@@ -80,9 +80,10 @@ export const ListadoSolicitudesArchivadas = () => {
           </div>
           {<div className="delete-all">
             <button type="button"
-                className="btn btn-primario"
+                className="btn btn-primario alargado"
                 onClick={() => {deleteAll()}}> 
-                Eliminar todas las solicitudes</button></div>}
+                <span role="img" aria-label="eliminar" >⛔</span> Eliminar archivadas</button></div>}
+          
           <div className="listado-cuentas">
             {solicitudes.length === 0 ? (
               <h2>No hay solicitudes archivadas</h2>

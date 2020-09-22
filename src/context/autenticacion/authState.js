@@ -93,16 +93,28 @@ const AuthState = (props) => {
     //Obtener el usuario
     usuarioAutenticado(); 
     } catch (error) {
+      if(error.response !== undefined){
         const alerta = {
-            msg: error.response.data.msg,
-            categoria: "alerta-error",
-          };
-          dispatch({
-            type: LOGIN_ERROR,
-            payload: alerta
-          });
-        }
-        
+          msg: error.response.data.msg,
+          categoria: "alerta-error",
+        };
+        dispatch({
+          type: LOGIN_ERROR,
+          payload: alerta
+        });
+      }
+      else{
+        const alerta = {
+          msg: 'No se pudo iniciar sesión | Server error',
+          categoria: "alerta-error",
+        };
+        dispatch({
+          type: LOGIN_ERROR,
+          payload: alerta
+        });
+      }
+      }
+     
         
     }   
 

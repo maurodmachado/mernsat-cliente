@@ -150,7 +150,7 @@ export const NuevaSolicitud = (props) => {
                 <input
                   type="submit"
                   className="btn btn-block btn-primario"
-                  value="✔️ Realizar solicitud"
+                  value="📝 Realizar solicitud"
                 />
               </div>
             </form>
