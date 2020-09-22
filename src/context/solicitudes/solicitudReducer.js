@@ -1,7 +1,12 @@
-import { OBTENER_SOLICITUDES_DPTO, ELIMINAR_SOLICITUD, OBTENER_SOLICITUDES, SOLICITUD_REGISTRADA, SOLICITUD_ERROR, ACTUALIZAR_SOLICITUD} from "../../types/index";
+import { OBTENER_SOLICITUDES_DPTO, ELIMINAR_SOLICITUD, ELIMINAR_SOLICITUDES, OBTENER_SOLICITUDES, SOLICITUD_REGISTRADA, SOLICITUD_ERROR, ACTUALIZAR_SOLICITUD} from "../../types/index";
 
 export default (state, action) => {
   switch (action.type) {
+    case ELIMINAR_SOLICITUDES:
+      return {
+        ...state,
+        solicitudes: state.solicitudes.filter((solicitud) => solicitud.estado !== action.payload),
+      };
     case ELIMINAR_SOLICITUD:
       return {
         ...state,

@@ -5,7 +5,7 @@ export const Sidebar = () => {
   return (
     <aside>
       <h1>
-        MERN <span>SAT</span>
+      <span role="img" aria-label="computer">🖥️</span> MERN <span>SAT</span>
       </h1>
       <br/>
       <div className="solicitudes">
@@ -21,6 +21,12 @@ export const Sidebar = () => {
       <Link to="/listadosolicitudes">
         <button type="text" className="btn btn-primario btn-block"  >
           Ver solicitudes
+        </button>
+      </Link>
+      <br/>
+      <Link to="/listadosolicitudesarchivadas">
+        <button type="text" className="btn btn-primario btn-block"  >
+          Ver solicitudes archivadas
         </button>
       </Link>
       <div className="solicitudes">

@@ -5,6 +5,7 @@ import { CrearCuenta } from "./components/cuentas/CrearCuenta";
 import { EliminarCuenta } from "./components/cuentas/EliminarCuenta";
 import { NuevaSolicitud } from "./components/solicitudes/NuevaSolicitud";
 import { ListadoSolicitudes } from "./components/solicitudes/ListadoSolicitudes";
+import { ListadoSolicitudesArchivadas } from "./components/solicitudes/ListadoSolicitudesArchivadas";
 import AlertaState from "./context/alertas/alertaState";
 import CuentaState from "./context/cuentas/cuentaState";
 import AuthState from "./context/autenticacion/authState";
@@ -26,6 +27,11 @@ function App() {
           <SolicitudState>
           <Router>
             <Switch>
+            <RutaPrivadaClientes
+                exact
+                path="/listadosolicitudesarchivadas"
+                component={ListadoSolicitudesArchivadas}
+              />
               <RutaPrivadaClientes exact path="/crearcuenta" component={CrearCuenta} />
               <RutaPrivadaClientes
                 exact

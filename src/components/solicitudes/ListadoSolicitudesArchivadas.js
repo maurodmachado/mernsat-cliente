@@ -10,7 +10,7 @@ import AlertaContext from "../../context/alertas/alertaContext";
 
 const socket = io.connect('http://localhost:4000')
 
-export const ListadoSolicitudes = () => {
+export const ListadoSolicitudesArchivadas = () => {
   
   let departamento = "";
   const [// eslint-disable-next-line 
@@ -25,8 +25,9 @@ export const ListadoSolicitudes = () => {
   const { alerta, mostrarAlerta } = alertaContext;
   
   const solicitudContext = useContext(SolicitudContext);
-  const { solicitudes, obtenerSolicitudes, mensaje } = solicitudContext;
-
+  const { solicitudes, obtenerArchivadas, eliminarTodas, mensaje } = solicitudContext;
+  
+ 
 //En caso de que el usuario se haya autenticado o registrado o sea un registro duplicado
   useEffect(() => {
     if (mensaje) {
@@ -43,12 +44,16 @@ export const ListadoSolicitudes = () => {
   }
   
   
+  const deleteAll = () => {
+    eliminarTodas();
+  }
+  
   useEffect(() => {
-    obtenerSolicitudes(departamento);
+    obtenerArchivadas();
     socket.on('message', ({ nombre_solicitante, departamento, descripcion, estado }) => {
       setListado([solicitudes, { nombre_solicitante, departamento, descripcion, estado }])
     })
-  }, [obtenerSolicitudes, departamento, solicitudes])
+  }, [obtenerArchivadas, solicitudes])
 
   return (
     <div className="contenedor-app">
@@ -67,18 +72,20 @@ export const ListadoSolicitudes = () => {
           <div className="formulario-listado-solicitudes">
             <br />
             {usuario != null ? (
-              usuario.departamento === "Informatica" ? (
-                <h2>Solicitudes por atender</h2>
+                <h2>Solicitudes archivadas</h2> 
               ) : (
-                <h2>Solicitudes realizadas</h2>
-              )
-            ) : (
               ""
             )}
+            
           </div>
+          {<div className="delete-all">
+            <button type="button"
+                className="btn btn-primario"
+                onClick={() => {deleteAll()}}> 
+                Eliminar todas las solicitudes</button></div>}
           <div className="listado-cuentas">
             {solicitudes.length === 0 ? (
-              <h2>No hay solicitudes realizadas</h2>
+              <h2>No hay solicitudes archivadas</h2>
             ) : (
               <table>
                 <thead>

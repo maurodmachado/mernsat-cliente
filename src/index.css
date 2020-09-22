@@ -50,6 +50,11 @@ a {
   color: var(--gris2);
 }
 
+.delete-all {
+  padding: 0.2rem 60rem;
+  border-radius: .5rem;
+ 
+}
 
 /** BOTONES **/
 .btn {
@@ -273,6 +278,10 @@ margin: 0 auto;
   background-color: rgba(255, 178, 178, .4);
   color: var(--gris3);
 }
+.archivada{
+  background-color: yellow; 
+  color: var(--gris3);
+}
 .error {
   max-width: 600px;
   margin: 2rem auto 0 auto;
@@ -392,7 +401,12 @@ margin: 0 auto;
 }
 
 .alerta-error {
-  background-color: rgb(230, 78, 78);
+  background-color: red;
+  color: var(--blanco);
+}
+
+.alerta-archivada{
+  background-color: var(--gris2);
   color: var(--blanco);
 }
 

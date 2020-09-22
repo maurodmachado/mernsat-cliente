@@ -1,7 +1,7 @@
 import React, { useReducer } from "react";
 import SolicitudContext from "./solicitudContext";
 import SolicitudReducer from "./solicitudReducer";
-import {OBTENER_SOLICITUDES, ELIMINAR_SOLICITUD, SOLICITUD_ERROR, SOLICITUD_REGISTRADA, OBTENER_SOLICITUDES_DPTO, ACTUALIZAR_SOLICITUD} from "../../types";
+import {OBTENER_SOLICITUDES, ELIMINAR_SOLICITUD, ELIMINAR_SOLICITUDES, SOLICITUD_ERROR, SOLICITUD_REGISTRADA, OBTENER_SOLICITUDES_DPTO, ACTUALIZAR_SOLICITUD} from "../../types";
 import clienteAxios from "../../config/axios";
 
 const SolicitudState = (props) => {
@@ -21,7 +21,7 @@ const SolicitudState = (props) => {
     try {
         
         const respuesta = await clienteAxios.get("/api/solicitudes");
-        
+        const solicitudes = respuesta.data.solicitudes.filter(sol => sol.estado !== 'archivada');
     //     if(departamento === 'Informatica'){
     //   dispatch({
     //     type: OBTENER_SOLICITUDES,
@@ -39,7 +39,7 @@ const SolicitudState = (props) => {
     //       });
     dispatch({
               type: OBTENER_SOLICITUDES,
-              payload: respuesta.data.solicitudes
+              payload: solicitudes
             });
     if(departamento !== 'Informatica'){
     
@@ -57,11 +57,47 @@ const SolicitudState = (props) => {
     
   };
 
+  const obtenerArchivadas = async () => {
+      
+    try {
+        
+        const respuesta = await clienteAxios.get("/api/solicitudes");
+        const solicitudes = respuesta.data.solicitudes.filter(sol => sol.estado === 'archivada');
+        
+    dispatch({
+              type: OBTENER_SOLICITUDES,
+              payload: solicitudes
+            });
+
+    } catch (error) {
+      console.log(error);
+    }
+    
+  };
+
+//Eliminar todas las solicitudes archivadas
+const eliminarTodas = async () => {
+  try {
+
+  await clienteAxios.delete(`api/solicitudes`)
+    
+    dispatch({
+      type: ELIMINAR_SOLICITUDES,
+      payload: 'archivada',
+    });
+  } catch (error) {
+    console.log(error);
+  }
+  
+};
+  
 
   //Eliminar solicitud por id
   const eliminarSolicitud = async (id) => {
     try {
+
     await clienteAxios.delete(`api/solicitudes/${id}`)
+    
       dispatch({
         type: ELIMINAR_SOLICITUD,
         payload: id,
@@ -75,7 +111,24 @@ const SolicitudState = (props) => {
   //Actualiza una solicitud
   const actualizarSolicitud = async solicitud => {
     try {
+      
       const respuesta = await clienteAxios.put(`api/solicitudes/${solicitud._id}`);
+      
+      dispatch({
+        type: ACTUALIZAR_SOLICITUD,
+        payload: respuesta.data.solicitud._id
+      })
+    } catch (error) {
+        console.log(error)
+    }
+    
+  }
+
+  //Actualiza una solicitud
+  const archivarSolicitud = async solicitud => {
+    try {
+      
+      const respuesta = await clienteAxios.put(`api/solicitudes/archivar/${solicitud._id}`);
       
       dispatch({
         type: ACTUALIZAR_SOLICITUD,
@@ -112,7 +165,7 @@ const SolicitudState = (props) => {
 
   return (
     <SolicitudContext.Provider
-      value={{ solicitudes: state.solicitudes, actualizarSolicitud, obtenerSolicitudes, eliminarSolicitud, registrarSolicitud }}
+      value={{ solicitudes: state.solicitudes, actualizarSolicitud, obtenerSolicitudes, obtenerArchivadas, archivarSolicitud, eliminarSolicitud, eliminarTodas, registrarSolicitud }}
     >
       {props.children}
     </SolicitudContext.Provider>
