@@ -93,7 +93,7 @@ export const Login = (props) => {
             <button
             type="submit"
             className="btn btn-primario btn-block">
-            <i class="fas fa-sign-in-alt"></i> Iniciar sesión
+            <i className="fas fa-sign-in-alt"></i> Iniciar sesión
             </button>
           </div>
         </form>
