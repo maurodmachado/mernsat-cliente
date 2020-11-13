@@ -5,7 +5,7 @@ export const SidebarClientes = () => {
   return (
     <aside>
       <h1>
-      <span role="img" aria-label="computer">🖥️</span> MERN <span>SAT</span><span role="img" aria-label="computer">🖥️</span>
+      <i className="fas fa-laptop-medical"></i>  MERN <span>SAT</span> <i className="fas fa-laptop-medical"></i> 
       </h1>
       <br/>
       <div className="solicitudes">
@@ -14,7 +14,7 @@ export const SidebarClientes = () => {
       </div>
       <Link to="/nuevasolicitud">
         <button type="text" className="btn btn-primario btn-block">
-          Realizar solicitud
+        <i className="far fa-paper-plane floatleft"></i> Realizar solicitud
         </button>
       </Link>
       <br/>
@@ -24,7 +24,7 @@ export const SidebarClientes = () => {
       </div>
       <Link to="/listadosolicitudes">
         <button type="text" className="btn btn-primario btn-block">
-          Ver mis solicitudes
+        <i className="far fa-list-alt floatleft"></i> Ver solicitudes
         </button>
       </Link>
     </aside>

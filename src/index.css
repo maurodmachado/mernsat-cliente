@@ -126,6 +126,10 @@ a {
 
 }
 
+.floatleft {
+  float: left;
+}
+
 /* BARRA LATERAL */
 aside  {
   padding: 3rem;

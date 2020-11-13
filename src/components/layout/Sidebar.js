@@ -5,7 +5,7 @@ export const Sidebar = () => {
   return (
     <aside>
       <h1>
-      <span role="img" aria-label="computer">🖥️</span> MERN <span>SAT</span><span role="img" aria-label="computer">🖥️</span>
+      <i className="fas fa-laptop-medical"></i>  MERN <span>SAT</span> <i className="fas fa-laptop-medical"></i> 
       </h1>
       <br/>
       <div className="solicitudes">
@@ -14,19 +14,19 @@ export const Sidebar = () => {
       </div>
       <Link to="/nuevasolicitud">
         <button type="text" className="btn btn-primario btn-block">
-          Realizar solicitud
+        <i className="far fa-paper-plane floatleft"></i> Realizar solicitud
         </button>
       </Link>
       <br/>
       <Link to="/listadosolicitudes">
         <button type="text" className="btn btn-primario btn-block"  >
-          Ver solicitudes
+        <i className="far fa-list-alt floatleft"></i> Ver solicitudes
         </button>
       </Link>
       <br/>
       <Link to="/listadosolicitudesarchivadas">
         <button type="text" className="btn btn-primario btn-block"  >
-          Ver solicitudes archivadas
+        <i className="fas fa-archive floatleft"></i> Ver solicitudes archivadas
         </button>
       </Link>
       <div className="solicitudes">
@@ -35,13 +35,13 @@ export const Sidebar = () => {
         <br/>
         <Link to="/crearcuenta">
           <button type="text" className="btn btn-primario btn-block">
-            Nueva cuenta
+          <i className="fas fa-user-plus floatleft"></i> Nueva cuenta
           </button>
         </Link>
         <br/>
         <Link to="/eliminarcuenta">
           <button type="text" className="btn btn-primario btn-block">
-            Eliminar cuenta
+          <i className="fas fa-users-cog floatleft"></i> Eliminar cuenta
           </button>
         </Link>
       </div>

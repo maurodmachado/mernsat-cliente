@@ -37,7 +37,7 @@ export const Cuenta = ({ cuenta }) => {
                 eliminarAccount(cuenta._id);
               }}
             >
-              <span role="img" aria-label="eliminar" >⛔</span> Eliminar
+              <i className="fas fa-user-times"></i> Eliminar
             </button>
           </div>
         

@@ -82,7 +82,7 @@ export const ListadoSolicitudesArchivadas = () => {
             <button type="button"
                 className="btn btn-primario alargado"
                 onClick={() => {deleteAll()}}> 
-                <span role="img" aria-label="eliminar" >⛔</span> Eliminar archivadas</button></div>}
+                <i className="far fa-trash-alt"></i> Eliminar archivadas</button></div>}
           
           <div className="listado-cuentas">
             {solicitudes.length === 0 ? (

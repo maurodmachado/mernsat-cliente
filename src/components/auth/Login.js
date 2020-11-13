@@ -56,7 +56,7 @@ export const Login = (props) => {
   return (
     <>
     <div className="top-header">
-    <h1><span role="img" aria-label="computadora" >💻</span>  Solicitud de Asistencia Técnica <span role="img" aria-label="computadora2" >💻</span></h1>
+    <h1><i className="fas fa-laptop-medical"></i> Solicitud de Asistencia Técnica <i className="fas fa-laptop-medical"></i></h1>
     
     </div>
     <div className="form-login">
@@ -68,7 +68,7 @@ export const Login = (props) => {
         <h1>Iniciar Sesión</h1>
         <form onSubmit={onSubmit}>
           <div className="campo-form">
-            <label htmlFor="usuario"> <span role="img" aria-label="usuario" >👤</span> Usuario</label>
+            <label htmlFor="usuario"> <i className="fas fa-user"></i> Usuario</label>
             <input
               type="text"
               id="usuario"
@@ -79,7 +79,7 @@ export const Login = (props) => {
             />
           </div>
           <div className="campo-form">
-            <label htmlFor="password"><span role="img" aria-label="password" >🔑</span> Password</label>
+            <label htmlFor="password"><i className="fas fa-key"></i> Password</label>
             <input
               type="password"
               id="password"
@@ -90,11 +90,11 @@ export const Login = (props) => {
             />
           </div>
           <div className="campo-form">
-            <input
-              type="submit"
-              className="btn btn-primario btn-block"
-              value="Iniciar Sesión"
-            />
+            <button
+            type="submit"
+            className="btn btn-primario btn-block">
+            <i class="fas fa-sign-in-alt"></i> Iniciar sesión
+            </button>
           </div>
         </form>
       </div>

@@ -77,9 +77,9 @@ export const Solicitud = ({ solicitud }) => {
                   onClick={() => cambiarEstado(solicitud)}
                 >
                   {solicitud.estado === "true"
-                    ? "Atendida"
+                    ? (<div><i className="fas fa-check-circle"></i> Atendida</div> )
                     : solicitud.estado === "false"
-                    ? "Sin atender"
+                    ? (<div><i className="far fa-times-circle"></i> Sin atender</div> )
                     : ""}
                 </button>
               ) : (
@@ -90,9 +90,9 @@ export const Solicitud = ({ solicitud }) => {
                   }
                 >
                   {solicitud.estado === "true"
-                    ? "Atendida"
+                    ? (<i className="fas fa-check-circle">Atendida</i> )
                     : solicitud.estado === "false"
-                    ? "Sin atender"
+                    ? (<div><i className="far fa-times-circle"></i> Sin atender</div> )
                     : ""}
                 </button>
               )
@@ -110,7 +110,7 @@ export const Solicitud = ({ solicitud }) => {
                     archivarRequest(solicitud);
                   }}
                 >
-                <span role="img" aria-label="archivar">📋</span> Archivar
+                <i className="fas fa-archive"></i> Archivar
                 </button>
               ) : (
                 <button
@@ -120,7 +120,7 @@ export const Solicitud = ({ solicitud }) => {
                     eliminarRequest(solicitud._id);
                   }}
                 >
-                  <span role="img" aria-label="eliminar" >⛔</span> Eliminar
+                  <i className="far fa-trash-alt"></i> Eliminar
                 </button>
               )
             ) : (
@@ -153,7 +153,7 @@ export const Solicitud = ({ solicitud }) => {
                   desarchivarRequest(solicitud);
                 }}
               >
-                <span role="img" aria-label="desarchivar" >🧷</span>  Desarchivar
+                <i className="fas fa-clipboard-list"></i> Desarchivar
               </button>
             ) : (
               ""
@@ -167,7 +167,7 @@ export const Solicitud = ({ solicitud }) => {
                   eliminarRequest(solicitud._id);
                 }}
               >
-                <span role="img" aria-label="eliminar" >⛔</span> Eliminar
+                <i className="far fa-trash-alt"></i> Eliminar
               </button>
             }
           </td>

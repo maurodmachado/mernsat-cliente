@@ -147,11 +147,11 @@ export const NuevaSolicitud = (props) => {
               </div>
               <br />
               <div className="contenedor-input">
-                <input
+               <button
                   type="submit"
-                  className="btn btn-block btn-primario"
-                  value="📝 Realizar solicitud"
-                />
+                  className="btn btn-block btn-primario">
+               <i className="far fa-paper-plane"></i> Realizar solicitud
+                 </button>
               </div>
             </form>
           </div>

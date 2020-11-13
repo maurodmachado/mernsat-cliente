@@ -96,7 +96,7 @@ export const CrearCuenta = (props) => {
               <h1>Crear una cuenta</h1>
               <form onSubmit={onSubmit}>
                 <div className="campo-form">
-                <label htmlFor="usuario"> <span role="img" aria-label="usuario" >👤</span> Usuario</label>
+                <label htmlFor="usuario"> <i className="fas fa-user"></i>  Usuario</label>
                   <input
                     type="text"
                     id="usuario"
@@ -107,7 +107,7 @@ export const CrearCuenta = (props) => {
                   />
                 </div>
                 <div className="campo-form">
-                <label htmlFor="password"><span role="img" aria-label="password" >🔑</span> Password</label>
+                <label htmlFor="password"><i className="fas fa-key"></i> Password</label>
                   <input
                     type="password"
                     id="password"
@@ -118,7 +118,7 @@ export const CrearCuenta = (props) => {
                   />
                 </div>
                 <div className="campo-form">
-                <label htmlFor="confirmar"><span role="img" aria-label="password" >🔑</span> Confirmar</label>
+                <label htmlFor="confirmar"><i className="fas fa-key"></i> Confirmar</label>
                   <input
                     type="password"
                     id="confirmar"
@@ -129,7 +129,7 @@ export const CrearCuenta = (props) => {
                   />
                 </div>
                 <div className="campo-form">
-                <label htmlFor="departamento"><span role="img" aria-label="departamento" >⚖️</span> Departamento</label>
+                <label htmlFor="departamento"><i className="fas fa-balance-scale"></i> Departamento</label>
                 <select id="departamento" name="departamento" value={departamento} onChange={onChange}>
                   <option value="" >
                     Seleccione departamento
@@ -141,11 +141,12 @@ export const CrearCuenta = (props) => {
                 </select>
                 </div>
                 <div className="campo-form">
-                  <input
-                    type="submit"
-                    className="btn btn-primario btn-block"
-                    value="Crear cuenta"
-                  />
+                  <button
+                   type="submit"
+                   className="btn btn-primario btn-block"
+                   >
+                  <i className="fas fa-user-plus floatleft"></i> Crear cuenta
+                    </button>
                 </div>
               </form>
             </div>
