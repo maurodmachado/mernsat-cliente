@@ -195,6 +195,7 @@ aside  {
   padding-left: 4rem;
   padding-right: 4rem;
   padding-bottom: 4rem;
+  min-height: 85vh
 }
 
 .formulario form {
@@ -362,14 +363,14 @@ margin: 0 auto;
 .campo-form input[type="text"] {
   border: 1px solid var(--gris2);
   padding: 1rem;
-  min-width: 300px;
+  min-width: 250px;
 
 }
 .campo-form select {
   border: 1px solid var(--gris2);
   padding: 1rem;
   display: flex;
-  min-width: 300px;
+  min-width: 250px;
 }
 
 .enlace-cuenta {
