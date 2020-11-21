@@ -8,7 +8,7 @@ import { Solicitud } from "./Solicitud";
 import io from 'socket.io-client'
 import AlertaContext from "../../context/alertas/alertaContext";
 
-const socket = io.connect('http://localhost:4000')
+const socket = io.connect(process.env.REACT_APP_BACKEND_URL)
 
 export const ListadoSolicitudes = () => {
   
@@ -38,14 +38,15 @@ export const ListadoSolicitudes = () => {
     usuarioAutenticado();
     
   }, [usuarioAutenticado]);
+
+
   if (usuario !== null) {
     departamento = usuario.departamento;
   }
   
-  
   useEffect(() => {
     obtenerSolicitudes(departamento);
-    socket.on('message', ({ nombre_solicitante, departamento, descripcion, estado }) => {
+    socket.on('solicitud', ({ nombre_solicitante, departamento, descripcion, estado }) => {
       setListado([solicitudes, { nombre_solicitante, departamento, descripcion, estado }])
     })
   }, [obtenerSolicitudes, departamento, solicitudes])

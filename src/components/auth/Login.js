@@ -3,6 +3,7 @@ import AlertaContext from "../../context/alertas/alertaContext";
 import AuthContext from "../../context/autenticacion/authContext";
 
 export const Login = (props) => {
+
   //Extraer los valores de alerta
   const alertaContext = useContext(AlertaContext);
   const { alerta, mostrarAlerta } = alertaContext;
@@ -20,7 +21,6 @@ export const Login = (props) => {
     }
   // eslint-disable-next-line
 }, [mensaje, autenticado, props.history,])
-
 
   //State iniciar sesion
   const [user, setUser] = useState({

@@ -22,21 +22,7 @@ const SolicitudState = (props) => {
         
         const respuesta = await clienteAxios.get("/api/solicitudes");
         const solicitudes = respuesta.data.solicitudes.filter(sol => sol.estado !== 'archivada');
-    //     if(departamento === 'Informatica'){
-    //   dispatch({
-    //     type: OBTENER_SOLICITUDES,
-    //     payload: respuesta.data.solicitudes
-    //   });
-    // }
-    // else{
-    //     dispatch({
-    //         type: OBTENER_SOLICITUDES,
-    //         payload: respuesta.data.solicitudes
-    //       });
-    //     dispatch({
-    //         type: OBTENER_SOLICITUDES_DPTO,
-    //         payload: departamento
-    //       });
+
     dispatch({
               type: OBTENER_SOLICITUDES,
               payload: solicitudes

@@ -50,7 +50,7 @@ export const ListadoSolicitudesArchivadas = () => {
   
   useEffect(() => {
     obtenerArchivadas();
-    socket.on('message', ({ nombre_solicitante, departamento, descripcion, estado }) => {
+    socket.on('solicitud', ({ nombre_solicitante, departamento, descripcion, estado }) => {
       setListado([solicitudes, { nombre_solicitante, departamento, descripcion, estado }])
     })
   }, [obtenerArchivadas, solicitudes])

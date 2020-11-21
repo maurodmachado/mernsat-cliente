@@ -77,7 +77,7 @@ export const NuevaSolicitud = (props) => {
       mostrarAlerta("Error al crear solicitud", "alerta-error");
     }
 
-    socket.emit("message", {
+    socket.emit("solicitud", {
       nombre_solicitante,
       departamento,
       descripcion,

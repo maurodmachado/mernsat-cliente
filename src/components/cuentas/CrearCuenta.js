@@ -4,7 +4,8 @@ import AlertaContext from "../../context/alertas/alertaContext";
 import AuthContext from "../../context/autenticacion/authContext";
 import { Barra } from "../layout/Barra";
 
-export const CrearCuenta = (props) => {
+export const CrearCuenta = () => {
+
   //Extraer los valores de alerta
   const alertaContext = useContext(AlertaContext);
   const { alerta, mostrarAlerta } = alertaContext;
